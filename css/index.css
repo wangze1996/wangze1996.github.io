@@ -1,4 +1,4 @@
-@import url(base.css);
+@import "base.css";
 /* 把一个css文件引入到另一个css中 */
 .header{
 	width: 100%;
@@ -118,9 +118,7 @@
 	border: 1px solid #e0e0e0;
 	box-sizing: border-box;
 }
-.star .star-top .star-topbox .left:hover{
-	color: #ff6700;
-}
+
 .star .star-top .star-topbox .right{
 	width: 36px;
 	height: 25px;
@@ -132,13 +130,24 @@
 	border-left: 0;
 	box-sizing: border-box;
 }
-.star .star-top .star-topbox .right:hover{
-	color: #ff6700;
+.star .star-top .star-topbox .active{
+	color: #B5B5B6;
+	cursor: pointer;
+	transition: color .5s; 
+}
+.star .star-top .star-topbox .active:hover{
+	color: orangered;
+}
+.star .star-bottom{
+	width: 1226px;
+	height: auto;
+	overflow: hidden;
 }
 .star .star-bot{
-	width: 100%;
+	width: 3000px;
 	height: 340px;
 	margin: 0 auto;
+	transition: all .5s;
 }
 .star-botbox{
 	width: 234px;
@@ -147,6 +156,9 @@
 	float: left;
 	margin-right: 14px;
 	border-top: 1px solid #FFAC13;
+}
+.star-botbox2{
+	margin-right: 0;
 }
 .star-botbox:last-child{
 	margin-right: 0;
@@ -769,7 +781,11 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	opacity: 0;
+	transition: 1s;
+
 }
+
 .img_box li a{
 	display: block;
 	width: 100%;
@@ -778,6 +794,10 @@
 .img_box li img{
 	width: 100%;
 	height: 100%;
+}
+.banner .img_box .active{
+	opacity: 1;
+	display: block;
 }
 .aside{
 	width: 234px;
@@ -826,10 +846,15 @@
 	margin-right: 10px;
 	border-radius: 50%;
 	border: 2px solid #757575;
+	cursor: pointer;
+	z-index: 7;
 }
-.btn_box li:hover{
+.btn_box .active{
+	background-color: #FFF;
+}
+/* .btn_box li:hover{
 	background-color: rgba(255,255,255,0.8);
-}
+} */
 .btn_box li:last-child{
 	margin-right: 0;
 }
@@ -847,6 +872,7 @@
 	left: 234px;
 	font-size: 28px;
 	color: #b0b0b0;
+	cursor: pointer;
 }
 .banner-l .iconfont{
 	font-size: 28px;
@@ -873,6 +899,7 @@
 	margin-top: auto;
 	margin-bottom: auto;
 	right: 0;
+	cursor: pointer;
 }
 .banner-r .iconfont{
 	font-size: 28px;
